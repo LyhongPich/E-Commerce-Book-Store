@@ -36,7 +36,7 @@
                 <span>Forget password?</span>
             </div>
             <div class="">
-                <button @click="$emit('logout')" class="w-[536px] h-[89px] bg-green-500 hover:bg-green-400">Sign In</button>
+                <button @click="$emit('logout')" class="w-[536px] h-[89px] rounded-[20px] bg-green-500 hover:bg-green-400">Sign In</button>
             </div>
             <div class="text-[24px] flex mt-[19px]">
                 <div class="">

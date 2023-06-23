@@ -10,6 +10,7 @@
     <header class="flex h-[93px] bg-zinc-300 items-center text-[18px]">
         <Link nameLink="/" link="Pickle" class="w-[51px] h-[22px] ml-[60px]"></Link>
         <Link nameLink="/shop" link="Shop" class="h-[22px] ml-[557px]"></Link>
+        <!-- <RouterLink to="/shop" class="h-[22px] ml-[557px]">Shop</RouterLink> -->
         <Link nameLink="/aboutUs" link="About Us" class="h-[22px] ml-[22px]"></Link>
         <Link nameLink="/contact" link="Contact" class="h-[22px] ml-[22px]"></Link>
         
