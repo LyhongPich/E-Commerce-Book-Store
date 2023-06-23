@@ -20,10 +20,10 @@
 </script>
 
 <template>
-  <div>
+  
     <Login @logout="isLogin = false" v-if="isLogin" />
     <Index v-else @login="isLogin = true"/>
-  </div>
+  
   <Footer></Footer>
 </template>
 

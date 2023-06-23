@@ -46,7 +46,6 @@
                     <button class="underline">Register!</button>
                 </div>
             </div>
-            
         </div>
     </div>
     

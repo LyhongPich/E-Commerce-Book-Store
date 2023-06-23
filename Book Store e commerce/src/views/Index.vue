@@ -27,5 +27,5 @@
     <br>
     <HomeContent></HomeContent>
     
-    <RouterView/>
+    
 </template>
