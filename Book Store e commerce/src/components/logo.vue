@@ -1,14 +1,12 @@
 <script setup>
     defineProps({
-        logoSrc: {
+       logoSrc: {
             type: String,
-            require: true
-        }
+            required: true,
+       } 
     })
 </script>
 
 <template>
-    
     <img :src="logoSrc" alt="">
-    
 </template>
