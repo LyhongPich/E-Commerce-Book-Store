@@ -36,7 +36,7 @@
                 return this.getQtd*this.items.price;
             },
             total() {
-                return this.subtotal+this.priceShipping+1.4;
+                return (this.subtotal+this.priceShipping+1.4).toFixed(2);
             }
         }
     }
