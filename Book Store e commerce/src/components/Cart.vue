@@ -101,7 +101,7 @@
                         <!-- 712.26 -->
                     </div>
                     <div class="w-[90%] text-[1.5em] text-right">
-                        <span>Subtotal: ${{ items.price }}</span>
+                        <span>Subtotal: ${{ subtotal }}</span>
                     </div>
                     <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>

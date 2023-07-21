@@ -20,16 +20,16 @@
             },
             priceShipping() {
                 if(this.selectedValue == 'UPS Ground') {
-                    return 2.20;
+                    return 2.2;
                 }
                 else if(this.selectedValue == 'UPS 3-day') {
-                    return 5.50;
+                    return 5.5;
                 }
                 else if(this.selectedValue == 'UPS 2-day') {
-                    return 9.20;
+                    return 9.2;
                 }
                 else if(this.selectedValue == 'UPS Next-day') {
-                    return 12.50;
+                    return 12.5;
                 } 
             },
             subtotal() {
