@@ -28,7 +28,7 @@
             <span>{{ title }}</span>
         </div>
         <div class="">
-            <span>{{ price }}</span>
+            <span>${{ price }}</span>
         </div>
     </div>
 </template>

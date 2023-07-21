@@ -44,7 +44,7 @@
             <RouterLink @click="reset()" to="/login" class="hover:opacity-50">Log in</RouterLink>
             <Icon @click="reset()" class="ml-[2.1%] mr-[1%] hover:opacity-50 hover:cursor-pointer" labelUrl="https://cdn-icons-png.flaticon.com/512/1089/1089292.png" desc="EN"></Icon>
             <button @click="checkcart()" class="hover:opacity-50 hover:cursor-pointer">
-                <Icon class="" labelUrl="https://cdn-icons-png.flaticon.com/512/263/263142.png" desc="Cart(0)"></Icon>
+                <Icon class="" labelUrl="https://cdn-icons-png.flaticon.com/512/263/263142.png" desc="Cart(1)"></Icon>
             </button>
         </div>
     </div>
@@ -64,7 +64,7 @@
                 <span>Quantity: 1 | $27.00</span>
                 <div class="mt-[45px] h-[38px] flex justify-between items-center">
                     <div class="h-[38px] border-[1px] border-solid border-black w-[42%]">
-                        <RouterLink to="/cart" class="bg-slate-300 flex w-full h-full justify-center items-center">View Cart</RouterLink>
+                        <RouterLink to="" class="bg-slate-300 flex w-full h-full justify-center items-center">View Cart</RouterLink>
                     </div>
                     <div class="flex h-full justify-center text-white items-center border-[1px] border-solid border-black bg-sky-500 w-[42%]">
                         <button>Checkout</button>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-[0] border-[2.5px] border-solid border-white w-[14.12%] relative mt-[-210.5px] ml-[358.66px]"></div>
+        <div class="h-[0] border-[2.5px] border-solid border-white w-[14.15%] relative mt-[-210.5px] ml-[358.64px]"></div>
     </div>
     <!-- <button @click="window()">Reset</button> -->
 </template>

@@ -88,7 +88,7 @@
                         <!-- 616.6325px -->
                         <div class=" flex justify-between items-center">
                             <span class="text-[3em]" :class="{'simplifyText' : longText }">{{ items.title }}</span>
-                            <span class="text-[3em]">{{ items.price }}</span>
+                            <span class="text-[3em]">${{ items.price }}</span>
                         </div>
                         <div class="w-full flex my-[31px]">
                             <div class="w-full h-0 border-[2px] border-solid border-black">

@@ -40,6 +40,9 @@
             longText() {
                 const maxLength = 18;
                 return this.items.title.length > maxLength;
+            },
+            subtotal() {
+                return this.qtd*this.items.price;
             }
         }
     }
@@ -80,7 +83,7 @@
                         <div class="w-2/5 flex justify-between items-center">
                             <!-- 284.904 -->
                             <div class="">
-                                <span>{{ items.price }}</span>
+                                <span>${{ items.price }}</span>
                             </div>
                             <div class="flex w-[57%] h-[40.25px] rounded-[12px] items-center rounded-l-[12px] bg-slate-200">
                                 <button @click="decrease()" class="w-1/4 flex justify-center items-center">
@@ -98,7 +101,7 @@
                         <!-- 712.26 -->
                     </div>
                     <div class="w-[90%] text-[1.5em] text-right">
-                        <span>Subtotal: {{ items.price }}</span>
+                        <span>Subtotal: ${{ items.price }}</span>
                     </div>
                     <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>
@@ -112,7 +115,7 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] mt-[25px]">
                             <span>Subtotal:</span>
-                            <span>{{ items.price }}</span>
+                            <span>${{ subtotal }}</span>
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] my-[26px]">
                             <span>Shipping:</span>
@@ -127,10 +130,10 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
-                            <span>{{ items.price }}</span>
+                            <span>${{ subtotal }}</span>
                         </div>
                         <div class="h-[38px] items-center border-[1px] border-solid border-black text-[1.5rem] mt-[5px]">
-                            <button class="w-full h-full bg-sky-500 text-white">Checkout</button>
+                            <RouterLink :to="`/checkout/product=${items.id}/quantity=${qtd}`" class="w-full h-full bg-sky-500 text-white flex justify-center items-center">Checkout</RouterLink>
                         </div>
                     </div>
                 </div>
