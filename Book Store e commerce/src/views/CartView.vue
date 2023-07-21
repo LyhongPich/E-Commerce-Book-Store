@@ -1,12 +1,13 @@
 <script>
-    import Login from '../components/Login.vue'
+    import Cart from '../components/Cart.vue'
+
     export default {
         components: {
-            Login,
+            Cart,
         }
     }
 </script>
 
 <template>
-    <Login></Login>
+    <Cart></Cart>
 </template>

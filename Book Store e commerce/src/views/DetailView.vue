@@ -1,12 +1,12 @@
 <script>
-    import Login from '../components/Login.vue'
+    import Detail from '../components/ProductDetail.vue'
     export default {
         components: {
-            Login,
+            Detail,
         }
     }
 </script>
 
 <template>
-    <Login></Login>
+    <Detail></Detail>
 </template>

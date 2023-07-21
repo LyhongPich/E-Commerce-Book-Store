@@ -1,15 +1,12 @@
-<template>
-  <div class="">
-    <h1>This is an about page</h1>
-  </div>
-</template>
+<script>
+    import About from '../components/About.vue'
+    export default {
+      components: {
+        About,
+      }
+    }
+</script>
 
-<style>
-/* @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-} */
-</style>
+<template>
+    <About></About>
+</template>

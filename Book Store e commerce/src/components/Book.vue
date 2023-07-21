@@ -1,27 +1,31 @@
 <script setup>
     defineProps({
-        bookUrl: {
+        url: {
             type: String,
-            required: true
+            required: true,
         },
-        data: {
+        title: {
             type: String,
-            required: true
+            required: true,
         },
         price: {
             type: String,
-            required: true
+            required: true,
+        },
+        style: {
+            type: String,
+            required: true,
         }
     })
 </script>
 
 <template>
-    <div class="text-center w-[224px] h-[286px]">
+    <div class="text-center flex flex-col justify-center">
         <div class="">
-            <img :src="bookUrl" alt="">
+            <img :src="url" alt="" :class="style">
         </div>
         <div class="">
-            <span>{{ data }}</span>
+            <span>{{ title }}</span>
         </div>
         <div class="">
             <span>{{ price }}</span>

@@ -2,18 +2,18 @@
     defineProps({
         labelUrl: {
             type: String,
-            required: true
+            required: true,
         },
-        labels: {
+        desc: {
             type: String,
-            required: true
+            required: true,
         }
     })
 </script>
 
 <template>
-    
-    <img :src="labelUrl" alt="" class="w-[22px] h-[22px]">
-    <span class="ml-[8px]">{{ labels }}</span>
-    
+    <div class="flex h-auto items-center">
+        <img class="w-[22px] h-[22px]" :src="labelUrl" alt="">
+        <span class="pl-[8px]">{{ desc }}</span>
+    </div>
 </template>

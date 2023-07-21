@@ -1,7 +1,21 @@
-<script setup>
+<script>
+    export default {
+        data() {
+            return {
+                search: "",
+            }
+        },
+        methods: {
+            searching() {
+                // logic
+            }
+        }
+    }
 </script>
 
 <template>
-    <input class="w-[206px] h-[43px] hover:border-2 hover:border-black hover:border-solid border-none rounded-[25px] pl-[16px] placeholder: text-[18px] text-zinc-300" type="text" placeholder="Search">
-    <img class="w-[21px] h-[21px] ml-[-41px] opacity-40 cursor-pointer" src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="">
+    <div class="flex h-[43px] items-center w-[16%]">
+        <input type="search" v-model="search" class="mr-[-20%] h-full rounded-[25px] w-full pl-[7%] hover:border-2 hover:border-solid border-black" placeholder="Search">
+        <img class="w-[21px] h-[21px] opacity-50 hover:cursor-pointer" src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="">
+    </div>
 </template>
