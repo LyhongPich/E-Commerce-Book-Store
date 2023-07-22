@@ -39,11 +39,11 @@
             </div>
             <div class="w-full flex h-[286px] items-center justify-between px-[2%] mt-[20px]">
                 <div v-for="item in items" :key="item.id" class="h-full bg-slate-300">
-                    <RouterLink :to="'/product/'+item.id">
+                    <RouterLink :to="{name: 'product', query: {id: item.id}}">
                         <Book class="h-full"
                             :url="item.url"
                             :title="item.title"
-                            :price="item.price"
+                            :price="(item.price).toFixed(2)"
                             :style="bookStyle">
                         </Book>
                     </RouterLink>

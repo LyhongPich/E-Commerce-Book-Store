@@ -9,5 +9,5 @@
 </script>
 
 <template>
-    <Cart></Cart>
+    <Cart/>
 </template>

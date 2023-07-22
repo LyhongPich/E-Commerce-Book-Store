@@ -36,24 +36,35 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue')
     },
     {
-      path: '/product/:id',
+      path: '/product',//query routing
       name: 'product',
       component: () => import('../views/DetailView.vue')
     },
     {
-      path: '/cart/product=:id/quantity=:qtd',
+      path: '/cart',
+      // path: '/cart/product=:id/quantity=:qtd',
       name: 'cart',
       component: () => import('../views/CartView.vue')
     },
     {
-      path: '/checkout/product=:id/quantity=:qtd',
+      path: '/checkout',
       name: 'checkout',
       component: () => import('../views/CheckoutView.vue')
     },
     {
-      path: '/shipping/product=:id/quantity=:qtd',
+      path: '/shipping',
       name: 'shipping',
       component: () => import('../views/ShippingView.vue')
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: () => import('../views/PaymentView.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('../views/SuccessView.vue')
     }
   ]
 })

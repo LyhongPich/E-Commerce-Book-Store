@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <Shipping></Shipping>
+    <Shipping/>
 </template>

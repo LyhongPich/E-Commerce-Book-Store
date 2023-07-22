@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <Checkout></Checkout>
+    <Checkout/>
 </template>

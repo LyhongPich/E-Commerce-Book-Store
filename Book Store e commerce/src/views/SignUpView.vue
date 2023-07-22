@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <Signup></Signup>
+    <Signup/>
 </template>

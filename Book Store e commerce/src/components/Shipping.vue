@@ -5,38 +5,38 @@
     export default {
         data() {
             return {
-                selectedValue: 'UPS Ground',
+                selectedValue: 'Ground',
             }
         },
         computed: {
             getId() {
-                return parseInt(this.$route.params.id);
+                return parseInt(this.$route.query.id);
             },
             getQtd() {
-                return parseInt(this.$route.params.qtd);
+                return parseInt(this.$route.query.qtd);
             },
             items() {
                 return data.find(item => item.id === this.getId);
             },
             priceShipping() {
-                if(this.selectedValue == 'UPS Ground') {
+                if(this.selectedValue == 'Ground') {
                     return 2.2;
                 }
-                else if(this.selectedValue == 'UPS 3-day') {
+                else if(this.selectedValue == '3-day') {
                     return 5.5;
                 }
-                else if(this.selectedValue == 'UPS 2-day') {
+                else if(this.selectedValue == '2-day') {
                     return 9.2;
                 }
-                else if(this.selectedValue == 'UPS Next-day') {
+                else if(this.selectedValue == 'Next-day') {
                     return 12.5;
                 } 
             },
             subtotal() {
-                return this.getQtd*this.items.price;
+                return (this.getQtd*this.items.price);
             },
             total() {
-                return (this.subtotal+this.priceShipping+1.4).toFixed(2);
+                return (this.subtotal+this.priceShipping+1.4);
             }
         }
     }
@@ -49,11 +49,11 @@
                 <div class="w-3/5 h-full">
                     <div class="w-[90%]">
                         <div class="flex items-center text-[1.125rem]">
-                            <RouterLink :to="`/cart/product=${getId}/quantity=${getQtd}`">Cart</RouterLink>
+                            <RouterLink :to="{name: 'cart', query: {id: getId, qtd: getQtd}}">Cart</RouterLink>
                             &nbsp;>&nbsp;
-                            <RouterLink :to="`/checkout/product=${getId}/quantity=${getQtd}`">Customer Information</RouterLink>
+                            <RouterLink :to="{name: 'checkout', query: {id: getId, qtd: getQtd}}">Customer Information</RouterLink>
                             &nbsp;>&nbsp;
-                            <RouterLink to="">Shipping</RouterLink>
+                            <RouterLink :to="{name: 'shipping', query: {id: getId, qtd: getQtd}}">Shipping</RouterLink>
                         </div>
                         <div class="mt-[19px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
@@ -73,28 +73,28 @@
                         </div>
                         <div class="flex h-[24px] justify-between items-center text-[1.25rem] mt-[26px]">
                             <div class="">
-                                <input type="radio" v-model="selectedValue" name="shipping" value="UPS Ground" class="mr-[5px]">
+                                <input type="radio" v-model="selectedValue" name="shipping" value="Ground" class="mr-[5px]">
                                 <span>UPS Ground</span>
                             </div>
                             <span>$2.20</span>
                         </div>
                         <div class="flex h-[24px] justify-between items-center text-[1.25rem] mt-[15px]">
                             <div class="">
-                                <input type="radio" v-model="selectedValue" name="shipping" value="UPS 3-day" class="mr-[5px]">
+                                <input type="radio" v-model="selectedValue" name="shipping" value="3-day" class="mr-[5px]">
                                 <span>UPS 3 Day Select</span>
                             </div>
                             <span>$5.50</span>
                         </div>
                         <div class="flex h-[24px] justify-between items-center text-[1.25rem] my-[15px]">
                             <div class="">
-                                <input type="radio" v-model="selectedValue" name="shipping" value="UPS 2-day" class="mr-[5px]">
+                                <input type="radio" v-model="selectedValue" name="shipping" value="2-day" class="mr-[5px]">
                                 <span>UPS 2nd Day Air</span>
                             </div>
                             <span>$9.20</span>
                         </div>
                         <div class="flex h-[24px] justify-between items-center text-[1.25rem]">
                             <div class="">
-                                <input type="radio" v-model="selectedValue" name="shipping" value="UPS Next-day" class="mr-[5px]">
+                                <input type="radio" v-model="selectedValue" name="shipping" value="Next-day" class="mr-[5px]">
                                 <span>UPS Next Day Air</span>
                             </div>
                             <span>$12.50</span>
@@ -103,8 +103,8 @@
                             <div class="h-0 border-2 border-solid border-black"></div>
                         </div>
                         <div class="h-[34px] text-[1.125rem] flex justify-between items-center mt-[22px]">
-                            <RouterLink class="h-full flex items-center" :to="`/checkout/product=${getId}/quantity=${getQtd}`">&lt; Return to Customer Information</RouterLink>
-                            <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="`/shipping/product=${getId}/quantity=${getQtd}`">Continue to Payment Method</RouterLink>
+                            <RouterLink class="h-full flex items-center" :to="{name: 'checkout', query: {id: getId, qtd: getQtd}}">&lt; Return to Customer Information</RouterLink>
+                            <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="{name: 'payment', query: {ship: selectedValue, id: getId, qtd: getQtd}}">Continue to Payment Method</RouterLink>
                         </div>
                     </div>
                 </div>
@@ -117,11 +117,11 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] mt-[25px]">
                             <span>Subtotal:</span>
-                            <span>${{ subtotal }}</span>
+                            <span>${{ subtotal.toFixed(2) }}</span>
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] my-[26px]">
                             <span>Shipping:</span>
-                            <span>${{ priceShipping }}</span>
+                            <span>${{ priceShipping.toFixed(2) }}</span>
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem]">
                             <span>Estimated Tax:</span>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
-                            <span>${{ total }}</span>
+                            <span>${{ total.toFixed(2) }}</span>
                         </div>
                     </div>
                 </div>

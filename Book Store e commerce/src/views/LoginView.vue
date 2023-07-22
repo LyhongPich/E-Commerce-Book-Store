@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <Login></Login>
+    <Login/>
 </template>

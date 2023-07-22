@@ -9,5 +9,5 @@
 </script>
 
 <template>
-    <Landing></Landing>
+    <Landing/>
 </template>

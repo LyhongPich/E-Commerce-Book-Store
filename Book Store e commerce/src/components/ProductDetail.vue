@@ -41,7 +41,7 @@
         },
         computed: {
             getId() {
-                return parseInt(this.$route.params.id)
+                return parseInt(this.$route.query.id)
             },
             items() {
                 return data.find(item => item.id === this.getId)
@@ -73,7 +73,7 @@
                 &nbsp;>&nbsp;
                 <RouterLink to="/shop" class="hover:opacity-50">Shop</RouterLink>
                 &nbsp;>&nbsp;
-                <RouterLink :to="`/product/${items.id}`" class="hover:opacity-50">{{ items.title }}</RouterLink>
+                <RouterLink :to="{name: 'product', query: {id: items.id}}" class="hover:opacity-50">{{ items.title }}</RouterLink>
             </div>
             <div class="w-full flex items-center h-[414px] mt-[21px]">
                 <!-- 1319px -->
@@ -88,7 +88,7 @@
                         <!-- 616.6325px -->
                         <div class=" flex justify-between items-center">
                             <span class="text-[3em]" :class="{'simplifyText' : longText }">{{ items.title }}</span>
-                            <span class="text-[3em]">${{ items.price }}</span>
+                            <span class="text-[3em]">${{ (items.price).toFixed(2) }}</span>
                         </div>
                         <div class="w-full flex my-[31px]">
                             <div class="w-full h-0 border-[2px] border-solid border-black">
@@ -118,7 +118,11 @@
                                 </div>
                                 <div class="flex w-[48%] h-full items-center border-black border-[2px] text-[1.5em] rounded-[14px]">
                                     <!-- 281px -->
-                                    <RouterLink :to="`/cart/product=${getId}/quantity=${qtd}`" class="w-full h-full bg-sky-500 text-white flex justify-center items-center rounded-[12px]">Add to cart</RouterLink>
+                                    <RouterLink :to="{name: 'cart', query: {id: getId, qtd: this.qtd} }" class="w-full h-full bg-sky-500 text-white flex justify-center items-center rounded-[12px]">Add to cart</RouterLink>
+
+                                    <!-- <RouterLink :to="{name: 'cart', params: {id: getId, qtd: this.qtd} }" class="w-full h-full bg-sky-500 text-white flex justify-center items-center rounded-[12px]">Add to cart</RouterLink> -->
+
+                                    <!-- <RouterLink :to="`/cart/product=${getId}/quantity=${qtd}`" class="w-full h-full bg-sky-500 text-white flex justify-center items-center rounded-[12px]">Add to cart</RouterLink> -->
                                     <!-- <button class="w-full h-full bg-sky-500 text-white flex justify-center items-center rounded-[12px]">Add to cart</button> -->
                                 </div>
                             </div>
@@ -146,7 +150,7 @@
             </div>
             <div class="w-full h-[143px] flex justify-between mt-[11px]">
                 <div v-for="book in randomSelect" :key="book.id" class="w-[15%] h-full">
-                    <RouterLink :to="`/product/${book.id}`">
+                    <RouterLink :to="{name: 'product', query: {id: book.id}}">
                         <Logo class="w-full h-full" :url="book.url"></Logo>
                     </RouterLink>
                 </div>

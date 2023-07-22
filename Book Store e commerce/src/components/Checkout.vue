@@ -4,16 +4,16 @@
     export default {
         computed: {
             getId() {
-                return parseInt(this.$route.params.id);
+                return parseInt(this.$route.query.id);
             },
             items() {
                 return data.find(item => item.id === this.getId);
             },
             getQtd() {
-                return parseInt(this.$route.params.qtd);
+                return parseInt(this.$route.query.qtd);
             },
             subtotal() {
-                return this.getQtd*this.items.price;
+                return (this.getQtd*this.items.price);
             }
         }
     }
@@ -29,9 +29,9 @@
                     <div class="w-[90%]">
                         <!-- 712.26px -->
                         <div class="text-[1.125rem]">
-                            <RouterLink :to="`/cart/product=${getId}/quantity=${getQtd}`">Cart</RouterLink>
+                            <RouterLink :to="{name: 'cart', query: {id: getId, qtd: getQtd}}">Cart</RouterLink>
                             &nbsp;>&nbsp;
-                            <RouterLink :to="`/checkout/product=${getId}/quantity=${getQtd}`">Customer Information</RouterLink>
+                            <RouterLink :to="{name: 'checkout', query: {id: getId, qtd: getQtd}}">Customer Information</RouterLink>
                         </div>
                         <div class="mt-[22px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
@@ -72,8 +72,8 @@
                             <div class="h-0 border-2 border-solid border-black"></div>
                         </div>
                         <div class="h-[34px] text-[1.125rem] flex justify-between items-center mt-[22px]">
-                            <RouterLink class="h-full flex items-center" :to="`/cart/product=${getId}/quantity=${getQtd}`">&lt; Return to cart</RouterLink>
-                            <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="`/shipping/product=${getId}/quantity=${getQtd}`">Continue to shipping</RouterLink>
+                            <RouterLink class="h-full flex items-center" :to="{name: 'cart', query: {id: getId, qtd: getQtd}}">&lt; Return to cart</RouterLink>
+                            <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="{name: 'shipping', query: {id: getId, qtd: getQtd}}">Continue to shipping</RouterLink>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] mt-[25px]">
                             <span>Subtotal:</span>
-                            <span>${{ subtotal }}</span>
+                            <span>${{ subtotal.toFixed(2) }}</span>
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] my-[26px]">
                             <span>Shipping:</span>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
-                            <span>${{ subtotal }}</span>
+                            <span>${{ subtotal.toFixed(2) }}</span>
                         </div>
                     </div>
                 </div>

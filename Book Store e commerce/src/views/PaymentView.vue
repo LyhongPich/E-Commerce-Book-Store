@@ -1,12 +1,12 @@
 <script>
-    import Contact from '../components/Contact.vue'
+    import Payment from '../components/Payment.vue'
     export default {
         components: {
-            Contact,
+            Payment,
         }
     }
 </script>
 
 <template>
-    <Contact/>
+    <Payment/>
 </template>

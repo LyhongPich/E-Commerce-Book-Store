@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <About></About>
+    <About/>
 </template>

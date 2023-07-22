@@ -1,12 +1,12 @@
 <script>
-    import Contact from '../components/Contact.vue'
+    import Success from '../components/Success.vue'
     export default {
         components: {
-            Contact,
+            Success,
         }
     }
 </script>
 
 <template>
-    <Contact/>
+    <Success/>
 </template>

@@ -5,7 +5,7 @@
     export default {
         data() {
             return {
-                qtd: this.$route.params.qtd
+                qtd: this.$route.query.qtd
             }
         },
         components: {
@@ -32,7 +32,7 @@
         },
         computed: {
             getId() {
-                return parseInt(this.$route.params.id)
+                return parseInt(this.$route.query.id)
             },
             items() {
                 return data.find(item => item.id === this.getId)
@@ -42,7 +42,7 @@
                 return this.items.title.length > maxLength;
             },
             subtotal() {
-                return this.qtd*this.items.price;
+                return (this.qtd*this.items.price).toFixed(2);
             }
         }
     }
@@ -133,7 +133,7 @@
                             <span>${{ subtotal }}</span>
                         </div>
                         <div class="h-[38px] items-center border-[1px] border-solid border-black text-[1.5rem] mt-[5px]">
-                            <RouterLink :to="`/checkout/product=${items.id}/quantity=${qtd}`" class="w-full h-full bg-sky-500 text-white flex justify-center items-center">Checkout</RouterLink>
+                            <RouterLink :to="{name: 'checkout', query: {id: getId, qtd: this.qtd}}" class="w-full h-full bg-sky-500 text-white flex justify-center items-center">Checkout</RouterLink>
                         </div>
                     </div>
                 </div>
