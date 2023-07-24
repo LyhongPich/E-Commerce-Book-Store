@@ -24,7 +24,6 @@
             reset() {
                 if(this.toggle == true) {
                     this.toggle = false;
-                    this.$emit('toggle-changed', this.toggle);
                 }
             }
         },

@@ -5,15 +5,27 @@
     import Footer from '../components/Footer.vue'
     
     export default {
+        data() {
+            return {
+                object: {},
+            }
+        },
         components: {
             Header,
             Footer,
+        },
+        methods: {
+            handleData(data) {
+                this.object = data;
+                this.$emit('handlemail', this.object);
+                console.log(data);
+            }
         }
     }
 </script>
 
 <template>
     <Header></Header>
-    <RouterView/>
+    <RouterView @checkmail="handleData"/>
     <Footer></Footer>
 </template>

@@ -1,12 +1,16 @@
 <script>
     import data from '../data.json'
     import { RouterLink } from 'vue-router'
+    import Line from './Line.vue'
 
     export default {
         data() {
             return {
                 selectedValue: 'Ground',
             }
+        },
+        components: {
+            Line,
         },
         computed: {
             getId() {
@@ -55,9 +59,10 @@
                             &nbsp;>&nbsp;
                             <RouterLink :to="{name: 'shipping', query: {id: getId, qtd: getQtd}}">Shipping</RouterLink>
                         </div>
-                        <div class="mt-[19px]">
+                        <Line class="mt-[19px]"/>
+                        <!-- <div class="mt-[19px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="flex justify-between items-center my-[25px]">
                             <div class="flex text-[1.25rem]">
                                 <span class="font-bold">Shipping Address</span>
@@ -65,9 +70,10 @@
                             </div>
                             <span class="text-blue-500 underline text-[1rem]">Edit</span>
                         </div>
-                        <div class="">
+                        <Line/>
+                        <!-- <div class="">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="text-[1.5rem] mt-[25px]">
                             <span>Shipping Method</span>
                         </div>
@@ -99,9 +105,10 @@
                             </div>
                             <span>$12.50</span>
                         </div>
-                        <div class="mt-[25px]">
+                        <Line class="mt-[25px]"/>
+                        <!-- <div class="mt-[25px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="h-[34px] text-[1.125rem] flex justify-between items-center mt-[22px]">
                             <RouterLink class="h-full flex items-center" :to="{name: 'checkout', query: {id: getId, qtd: getQtd}}">&lt; Return to Customer Information</RouterLink>
                             <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="{name: 'payment', query: {ship: selectedValue, id: getId, qtd: getQtd}}">Continue to Payment Method</RouterLink>
@@ -134,9 +141,10 @@
                             <input type="text" class="w-[47%] h-full border-2 border-solid border-black pl-[2%]">
                             <button class="w-[28%] h-full bg-sky-500 text-white">Apply</button>
                         </div>
-                        <div class="w-full mt-[18px]">
+                        <Line class="mt-[18px]"/>
+                        <!-- <div class="w-full mt-[18px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
                             <span>${{ total.toFixed(2) }}</span>

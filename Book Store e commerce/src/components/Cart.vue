@@ -2,6 +2,7 @@
     import Logo from './Logo.vue'
     import data from '../data.json'
     import Quantity from './Quantity.vue'
+    import Line from './Line.vue'
     export default {
         data() {
             return {
@@ -11,6 +12,7 @@
         components: {
             Logo,
             Quantity,
+            Line,
         },
         methods: {
             increase() {
@@ -53,35 +55,38 @@
         <div class="w-[90%] h-full">
             <div class="flex h-[436px] items-center mt-[74px]">
                 <div class="w-3/5 h-[400px]">
-                    <!-- 791.4 -->
+                    <!-- 791.4px -->
                     <span class="text-[2rem]">Your Cart</span>
-                    <div class="w-full flex">
+                    <Line class="w-[90%]"/>
+                    <!-- 712.26px -->
+                    <!-- <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>
-                        <!-- 712.26 -->
-                    </div>
+                        712.26
+                    </div> -->
                     <div class="w-[90%] flex text-[1.5em] items-center">
                         <div class="w-3/5 flex items-center">
-                            <!-- 474.84 -->
+                            <!-- 474.84px -->
                             <span>Item</span>
                         </div>
                         <div class="w-[34%] flex justify-between items-center">
-                            <!-- 316.56 -->
+                            <!-- 316.56px -->
                             <span>Price</span>
                             <span>Quantity</span>
                         </div>
                     </div>
-                    <div class="w-full flex">
+                    <Line class="w-[90%]"/>
+                    <!-- <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>
-                    </div>
+                    </div> -->
                     <div class="w-[90%] text-[1.5em] flex h-[226.01px] items-center">
-                        <!-- 712.26 -->
+                        <!-- 712.26px -->
                         <div class="w-3/5 flex items-center">
-                            <!-- 427.356 -->
+                            <!-- 427.356px -->
                             <Logo class="w-[34%] h-[149px]" :url="items.url"></Logo>
                             <span :class="{'simplifyText' : longText}">{{ items.title }}</span>
                         </div>
                         <div class="w-2/5 flex justify-between items-center">
-                            <!-- 284.904 -->
+                            <!-- 284.904px -->
                             <div class="">
                                 <span>${{ items.price }}</span>
                             </div>
@@ -96,17 +101,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full flex">
+                    <Line class="w-[90%]"/>
+                    <!-- 712.26px -->
+                    <!-- <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>
-                        <!-- 712.26 -->
-                    </div>
+                        712.26
+                    </div> -->
                     <div class="w-[90%] text-[1.5em] text-right">
                         <span>Subtotal: ${{ subtotal }}</span>
                     </div>
-                    <div class="w-full flex">
+                    <Line class="w-[90%]"/>
+                    <!-- 712.26px -->
+                    <!-- <div class="w-full flex">
                         <div class="w-[90%] h-0 border-2 border-solid border-black"></div>
-                        <!-- 712.26 -->
-                    </div>
+                        712.26
+                    </div> -->
                 </div>
                 <div class="w-2/5 h-[400px] flex justify-center items-center bg-gray-300">
                     <div class="w-[92%] h-[361px]">
@@ -125,9 +134,10 @@
                             <span>Estimated Tax:</span>
                             <span>-</span>
                         </div>
-                        <div class="w-full mt-[35px]">
+                        <Line class="mt-[35px]"/>
+                        <!-- <div class="w-full mt-[35px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
                             <span>${{ subtotal }}</span>

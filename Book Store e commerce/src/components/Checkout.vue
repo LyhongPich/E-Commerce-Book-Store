@@ -1,7 +1,11 @@
 <script>
     import { RouterLink } from 'vue-router'
     import data from '../data.json'
+    import Line from './Line.vue'
     export default {
+        components: {
+            Line,
+        },
         computed: {
             getId() {
                 return parseInt(this.$route.query.id);
@@ -33,9 +37,10 @@
                             &nbsp;>&nbsp;
                             <RouterLink :to="{name: 'checkout', query: {id: getId, qtd: getQtd}}">Customer Information</RouterLink>
                         </div>
-                        <div class="mt-[22px]">
+                        <Line class="mt-[22px]"/>
+                        <!-- <div class="mt-[22px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="flex justify-between items-center mt-[18px]">
                             <span class="text-[1.5rem]">Customer Information</span>
                             <span class="text-[1rem]">Already have an account? <RouterLink class="text-blue-500" to="/login">Log in</RouterLink></span>
@@ -43,9 +48,10 @@
                         <div class="h-[46px] mt-[25px]">
                             <input class="w-full h-full text-[1.25rem] pl-[3%] border-2 border-solid border-black rounded-[10px]" type="text" placeholder="Email">
                         </div>
-                        <div class="mt-[30px]">
+                        <Line class="mt-[30px]"/>
+                        <!-- <div class="mt-[30px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="text-[1.5rem] mt-[15px]">
                             <span>Shipping Address</span>
                         </div>
@@ -68,9 +74,10 @@
                             </select>
                             <input class="w-[10%] h-full text-[1.25rem] pl-[2%] border-2 border-solid border-black rounded-[10px]" type="text" placeholder="Zip">
                         </div>
-                        <div class="mt-[22px]">
+                        <Line class="mt-[22px]"/>
+                        <!-- <div class="mt-[22px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="h-[34px] text-[1.125rem] flex justify-between items-center mt-[22px]">
                             <RouterLink class="h-full flex items-center" :to="{name: 'cart', query: {id: getId, qtd: getQtd}}">&lt; Return to cart</RouterLink>
                             <RouterLink class="w-[35%] h-full border-2 border-solid border-black flex justify-center items-center bg-sky-500 text-white" :to="{name: 'shipping', query: {id: getId, qtd: getQtd}}">Continue to shipping</RouterLink>
@@ -103,9 +110,10 @@
                             <input type="text" class="w-[47%] h-full border-2 border-solid border-black pl-[2%]">
                             <button class="w-[28%] h-full bg-sky-500 text-white">Apply</button>
                         </div>
-                        <div class="w-full mt-[18px]">
+                        <Line class="mt-[18px]"/>
+                        <!-- <div class="w-full mt-[18px]">
                             <div class="h-0 border-2 border-solid border-black"></div>
-                        </div>
+                        </div> -->
                         <div class="w-full flex justify-between items-center text-[1.5rem] font-bold mt-[10px]">
                             <span>Total:</span>
                             <span>${{ subtotal.toFixed(2) }}</span>

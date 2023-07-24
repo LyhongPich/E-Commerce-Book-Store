@@ -3,6 +3,7 @@
     import Logo from './Logo.vue'
     import Quantity from './Quantity.vue'
     import data from '../data.json'
+    import Line from './Line.vue'
 
     export default {
         data() {
@@ -14,6 +15,7 @@
         components: {
             Logo,
             Quantity,
+            Line,
         },
         methods: {
             increase() {
@@ -90,11 +92,13 @@
                             <span class="text-[3em]" :class="{'simplifyText' : longText }">{{ items.title }}</span>
                             <span class="text-[3em]">${{ (items.price).toFixed(2) }}</span>
                         </div>
-                        <div class="w-full flex my-[31px]">
+                        <Line class="w-full flex my-[31px]"/>
+                        <!-- 586.67px -->
+                        <!-- <div class="w-full flex my-[31px]">
                             <div class="w-full h-0 border-[2px] border-solid border-black">
-                            <!-- 586.67px -->
+                            586.67px
                             </div>
-                        </div>
+                        </div> -->
                         <div class="w-full flex text-[2em]">
                             <span class="w-full">Quantity</span>
                         </div>
@@ -140,11 +144,12 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full flex items-center mt-[30px]">
+            <Line class="opacity-30 w-full flex items-center mt-[30px]"/>
+            <!-- <div class="w-full flex items-center mt-[30px]">
                 <div class="border-2 border-solid border-gray-400 h-0 w-full">
 
                 </div>
-            </div>
+            </div> -->
             <div class="w-full flex items-center mt-[15px] text-[1.5em]">
                 <span>Related Books</span>
             </div>
