@@ -41,8 +41,8 @@
             <RouterLink @click="reset()" to="/signup" class="hover:opacity-50">Sign Up</RouterLink>
             <span>&nbsp;|&nbsp;</span>
             <RouterLink @click="reset()" to="/login" class="hover:opacity-50">Log in</RouterLink>
-            <Icon @click="reset()" class="ml-[2.1%] mr-[1%] hover:opacity-50 hover:cursor-pointer" labelUrl="https://cdn-icons-png.flaticon.com/512/1089/1089292.png" desc="EN"></Icon>
-            <button @click="checkcart()" class="hover:opacity-50 hover:cursor-pointer">
+            <!-- <Icon @click="reset()" class="ml-[2.1%] mr-[1%] hover:opacity-50 hover:cursor-pointer" labelUrl="https://cdn-icons-png.flaticon.com/512/1089/1089292.png" desc="EN"></Icon> -->
+            <button @click="checkcart()" class="hover:opacity-50 hover:cursor-pointer ml-[6%]">
                 <Icon class="" labelUrl="https://cdn-icons-png.flaticon.com/512/263/263142.png" desc="Cart(1)"></Icon>
             </button>
         </div>
